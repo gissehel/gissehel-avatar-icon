@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="1.1"
+    width="600" 
+    height="600"
+>
+<title>QucikTools Icon</title>
+<g>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" x1="300" x2="300" y1="600" y2="0" id="back">
+<stop offset="0%" stop-color="#e0e0e0"/>
+<stop offset="100%" stop-color="#f0f0f0"/>
+</linearGradient>
+<g id="form">
+<path 
+    
+    d="
+        M 210,0 
+        l 80,0 
+        a 10,10 0 0,1 10,10 
+        l 0,80 
+        a 10,10 0 0,0 10,10 
+        l 80,0 
+        a 10,10 0 0,1 10,10 
+        l 0,80 
+        a 10,10 0 0,0 10,10 
+        l 80,0 
+        a 10,10 0 0,1 10,10 
+        l 0,80 
+        a 10,10 0 0,1 -10,10 
+        l -180,0
+        a 10,10 0 0,0 -10,10 
+        l 0,80 
+        a 10,10 0 0,0 10,10 
+        l 180,0 
+        a 10,10 0 0,1 10,10 
+        l 0,80 
+        a 10,10 0 0,1 -10,10 
+        l -180,0
+        a 10,10 0 0,1 -10,-10 
+        l 0,-80
+        a 10,10 0 0,0 -10,-10 
+        l -80,0
+        a 10,10 0 0,0 -10,10 
+        l 0,80
+        a 10,10 0 0,1 -10,10 
+        l -180,0
+        a 10,10 0 0,1 -10,-10 
+        l 0,-80
+        a 10,10 0 0,1 10,-10 
+        l 180,0 
+        a 10,10 0 0,0 10,-10 
+        l 0,-80
+        a 10,10 0 0,0 -10,-10 
+        l -180,0
+        a 10,10 0 0,1 -10,-10 
+        l 0,-80
+        a 10,10 0 0,1 10,-10 
+        l 80,0 
+        a 10,10 0 0,0 10,-10 
+        l 0,-80
+        a 10,10 0 0,1 10,-10 
+        l 80,0 
+        a 10,10 0 0,0 10,-10 
+        l 0,-80
+        a 10,10 0 0,1 10,-10 
+        z" />
+</g>
+</defs>
+</g>
+<rect width="596" height="596" rx="10" ry="10" x="1" y="1" stroke-width="2" stroke="#000000" fill="url(#back)">
+</rect>
+<use xlink:href="#form" fill="#2d3189" x="50" y="45" />
+<use xlink:href="#form" fill="#ffffff" x="50" y="55" />
+<use xlink:href="#form" fill="#4d61d9" x="50" y="50" />
+</svg>
