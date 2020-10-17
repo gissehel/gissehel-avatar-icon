@@ -288,11 +288,12 @@ based on sequence [{source}]
     
 def main():
     ag = AvaterGenerator()
-    print ag.generate_all('test1', '#76d26d', "r1p6248z r1m662p626262424448486868z r0m666222p4268z r1m6666p6248z")
-    print ag.generate_all('test2','#6492cc',"r1p222662442668626684486688842248424884z")
-    print ag.generate_all('test3','#d595e6',"r1m6p6248z r1m666p6248z r1m6222p6662624844424868z")
-    print ag.generate_all('git-avatar','#4d61d9',"r1m6662p626244266244842448668448686862z")
-    print ag.generate_all('championship','#da1682',"r1p62686268622424266244444866848488z")
+    # print ag.generate_all('test1', '#76d26d', "r1p6248z r1m662p626262424448486868z r0m666222p4268z r1m6666p6248z")
+    # print ag.generate_all('test2','#6492cc',"r1p222662442668626684486688842248424884z")
+    # print ag.generate_all('test3','#d595e6',"r1m6p6248z r1m666p6248z r1m6222p6662624844424868z")
+    # print ag.generate_all('git-avatar','#4d61d9',"r1m6662p626244266244842448668448686862z")
+    # print ag.generate_all('championship','#da1682',"r1p62686268622424266244444866848488z")
+    print ag.generate_all('webgiss','#b74ad3',"r1p626862686222224444488888z r0m6622p2684z r0m6222p2684z r0m666222p2684z")
 
 
 main()
