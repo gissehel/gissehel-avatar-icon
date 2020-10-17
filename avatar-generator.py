@@ -229,7 +229,7 @@ class AvaterGenerator(object):
                              for color_items in (rgbs, dark_rgbs))
         return list('#'+''.join(map(lambda x: "%02x" % x, color_items)) for color_items in (rgbs, dark_rgbs))
 
-    def generate(self, name, color, data, spherical=False, bezier=False):
+    def generate(self, name, color, data, spherical_borders=False, spherical_content=False):
         color, color_dark = self.get_colors(color)
 
         pattern = '''<?xml version="1.0" encoding="utf-8"?>
@@ -257,21 +257,34 @@ based on sequence [{source}]
 </defs>
 </g>
 <{back_pattern} x="8" y="8" stroke-width="8" stroke="#333333" fill="url(#back)" />
-<use xlink:href="#form" fill="{color_dark}" x="50" y="35" />
-<use xlink:href="#form" fill="#ffffff" x="50" y="65" />
-<use xlink:href="#form" fill="{color}" x="50" y="50" />
+<g transform="translate({offset} {offset}) scale({scale})">
+<use xlink:href="#form" fill="{color_dark}" y="-15" />
+<use xlink:href="#form" fill="#ffffff" y="15" />
+<use xlink:href="#form" fill="{color}" y="0" />
+</g>
 </svg>'''
+        offset = 50
+        scale = 1
+
+        if spherical_borders and not(spherical_content):
+            offset = 100
+            scale = 0.8
+
         avatar = pattern.format(
             color=color,
             color_dark=color_dark,
-            back_pattern='circle cx="300" cy="300" r="292"' if spherical else 'rect width="584" height="584" rx="25" ry="25"',
-            path=PathMaker(spherical, bezier).make_path(data), source=data)
+            back_pattern='circle cx="300" cy="300" r="292"' if spherical_borders else 'rect width="584" height="584" rx="25" ry="25"',
+            path=PathMaker(spherical=spherical_content, bezier=True).make_path(data), source=data,
+            offset=offset,
+            scale=scale,
+        )
         with open("{name}.svg".format(name=name), 'wb') as handle:
             handle.write(avatar)
 
     def generate_all(self, name, color, data):
-        self.generate(name + '-rect', color, data, spherical=False, bezier=True)
-        self.generate(name + '-circle', color, data, spherical=True, bezier=True)
+        self.generate(name + '-rect', color, data, spherical_borders=False, spherical_content=False)
+        self.generate(name + '-circle', color, data, spherical_borders=True, spherical_content=False)
+        self.generate(name + '-anacircle', color, data, spherical_borders=True, spherical_content=True)
     
 def main():
     ag = AvaterGenerator()

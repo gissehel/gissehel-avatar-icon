@@ -23,7 +23,9 @@ based on sequence [r1m6662p626244266244842448668448686862z]
 </defs>
 </g>
 <rect width="584" height="584" rx="25" ry="25" x="8" y="8" stroke-width="8" stroke="#333333" fill="url(#back)" />
-<use xlink:href="#form" fill="#26306c" x="50" y="35" />
-<use xlink:href="#form" fill="#ffffff" x="50" y="65" />
-<use xlink:href="#form" fill="#4d61d9" x="50" y="50" />
+<g transform="translate(50 50) scale(1)">
+<use xlink:href="#form" fill="#26306c" y="-15" />
+<use xlink:href="#form" fill="#ffffff" y="15" />
+<use xlink:href="#form" fill="#4d61d9" y="0" />
+</g>
 </svg>
