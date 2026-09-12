@@ -1,4 +1,4 @@
-import yaml
+# import yaml
 import math
 
 directions = {
@@ -155,7 +155,7 @@ class PathMaker(object):
             (current_x, current_y) = (x_init, y_init)
             result += "M {},{} ".format(X_init, Y_init)
             path = form._path + [form._path[0]]
-            for action_index in xrange(len(form._path)):
+            for action_index in range(len(form._path)):
                 if self._bezier:
                     if self._spherical:
                         action = path[action_index]
@@ -166,7 +166,7 @@ class PathMaker(object):
                         x1d, y1d = next_action._direction
                         (x_bezier0, y_bezier0) = (x*width-xd*round, y*width-yd*round)
                         n = 25
-                        for index in xrange(n):
+                        for index in range(n):
                             x_l = current_x + (index+1)*((x_bezier0-current_x)/n)
                             y_l = current_y + (index+1)*((y_bezier0-current_y)/n)
                             (X, Y) = trans((x_l, y_l))
@@ -223,11 +223,10 @@ class AvaterGenerator(object):
         pass
 
     def get_colors(self, color):
-        rgbs = map(lambda x: int(x, 16), (color[1:3], color[3:5], color[5:7]))
-        dark_rgbs = map(lambda x: x/2, rgbs)
-        color, dark_color = ('#'+''.join(map(lambda x: "%02x" % x, color_items))
-                             for color_items in (rgbs, dark_rgbs))
-        return list('#'+''.join(map(lambda x: "%02x" % x, color_items)) for color_items in (rgbs, dark_rgbs))
+        rgbs = list(map(lambda x: int(x, 16), (color[1:3], color[3:5], color[5:7])))
+        dark_rgbs = list(map(lambda x: int(x/2), rgbs))
+        [color, dark_color] = list('#'+''.join(map(lambda x: "%02x" % x, color_items)) for color_items in [rgbs, dark_rgbs])
+        return list('#'+''.join(map(lambda x: "%02x" % x, color_items)) for color_items in [rgbs, dark_rgbs])
 
     def generate(self, name, color, data, spherical_borders=False, spherical_content=False):
         color, color_dark = self.get_colors(color)
@@ -279,7 +278,9 @@ based on sequence [{source}]
             scale=scale,
         )
         with open("{name}.svg".format(name=name), 'wb') as handle:
-            handle.write(avatar)
+            handle.write(
+                avatar.encode('utf-8')
+            )
 
     def generate_all(self, name, color, data):
         self.generate(name + '-rect', color, data, spherical_borders=False, spherical_content=False)
@@ -288,12 +289,12 @@ based on sequence [{source}]
     
 def main():
     ag = AvaterGenerator()
-    # print ag.generate_all('test1', '#76d26d', "r1p6248z r1m662p626262424448486868z r0m666222p4268z r1m6666p6248z")
-    # print ag.generate_all('test2','#6492cc',"r1p222662442668626684486688842248424884z")
-    # print ag.generate_all('test3','#d595e6',"r1m6p6248z r1m666p6248z r1m6222p6662624844424868z")
-    # print ag.generate_all('git-avatar','#4d61d9',"r1m6662p626244266244842448668448686862z")
-    # print ag.generate_all('championship','#da1682',"r1p62686268622424266244444866848488z")
-    print ag.generate_all('webgiss','#b74ad3',"r1p626862686222224444488888z r0m6622p2684z r0m6222p2684z r0m666222p2684z")
-
+    # print(ag.generate_all('test1', '#76d26d', "r1p6248z r1m662p626262424448486868z r0m666222p4268z r1m6666p6248z"))
+    # print(ag.generate_all('test2','#6492cc',"r1p222662442668626684486688842248424884z"))
+    # print(ag.generate_all('test3','#d595e6',"r1m6p6248z r1m666p6248z r1m6222p6662624844424868z"))
+    print(ag.generate_all('git-avatar','#4d61d9',"r1m6662p626244266244842448668448686862z"))
+    # print(ag.generate_all('championship','#da1682',"r1p62686268622424266244444866848488z"))
+    # print(ag.generate_all('gdacm','#5c4ed3',"r1m6p62686242626224884842422488686848z r1m662222p6248z"))
+    # print(ag.generate_all('webgiss','#b74ad3',"r1p626862686222224444488888z r0m6622p2684z r0m6222p2684z r0m666222p2684z"))
 
 main()
