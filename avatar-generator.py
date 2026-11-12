@@ -296,5 +296,7 @@ def main():
     # print(ag.generate_all('championship','#da1682',"r1p62686268622424266244444866848488z"))
     # print(ag.generate_all('gdacm','#5c4ed3',"r1m6p62686242626224884842422488686848z r1m662222p6248z"))
     # print(ag.generate_all('webgiss','#b74ad3',"r1p626862686222224444488888z r0m6622p2684z r0m6222p2684z r0m666222p2684z"))
+    # print(ag.generate_all('out/atavo-studio/atavo-studio','#c9529d',"r1p66666222224488868444262224488888z"))
+    # print(ag.generate_all('out/atavo-user/atavo-user','#d1779e',"r1m66p622624448688z r1m62222p66624448z"))
 
 main()

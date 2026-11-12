@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    version="1.1"
+    width="600" 
+    height="600"
+>
+<title>Avatar</title>
+<g>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" x1="300" x2="300" y1="600" y2="0" id="back">
+<stop offset="0%" stop-color="#e0e0e0"/>
+<stop offset="100%" stop-color="#f0f0f0"/>
+</linearGradient>
+<g id="form">
+<!--
+based on sequence [r1m66p622624448688z r1m62222p66624448z]
+-->
+<path 
+    d="M 225,0 L 275,0 C 288.8075,0.0 300.0,11.192499999999999 300,25 L 300,175 C 300.0,188.8075 311.1925,200.0 325,200 L 375,200 C 388.8075,200.0 400.0,211.1925 400,225 L 400,275 C 400.0,288.8075 388.8075,300.0 375,300 L 125,300 C 111.1925,300.0 100.0,288.8075 100,275 L 100,225 C 100.0,211.1925 111.1925,200.0 125,200 L 175,200 C 188.8075,200.0 200.0,188.8075 200,175 L 200,25 C 200.0,11.192499999999999 211.1925,0.0 225,0 z M 125,400 L 375,400 C 388.8075,400.0 400.0,411.1925 400,425 L 400,475 C 400.0,488.8075 388.8075,500.0 375,500 L 125,500 C 111.1925,500.0 100.0,488.8075 100,475 L 100,425 C 100.0,411.1925 111.1925,400.0 125,400 z " />
+</g>
+</defs>
+</g>
+<circle cx="300" cy="300" r="292" x="8" y="8" stroke-width="8" stroke="#333333" fill="url(#back)" />
+<g transform="translate(100 100) scale(0.8)">
+<use xlink:href="#form" fill="#683b4f" y="-15" />
+<use xlink:href="#form" fill="#ffffff" y="15" />
+<use xlink:href="#form" fill="#d1779e" y="0" />
+</g>
+</svg>
